@@ -1,17 +1,43 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios'; // 如果你使用axios进行HTTP请求
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    // 定义状态
+    user: null,
+    // 其他状态
   },
   mutations: {
-    // 定义改变状态的方法
+    setUser(state, user) {
+      state.user = user;
+    },
+    // 其他 mutations
   },
   actions: {
-    // 定义执行异步操作的方法
+  async login({ commit }, credentials) {
+    try {
+      const response = await axios.post('/api/login', credentials);
+      commit('setUser', response.data.user);
+    } catch (error) {
+      console.error('An error occurred while logging in:', error);
+      throw error;
+    }
   },
+  logout({ commit }) {
+    // 可以添加与服务器通信的代码来执行服务器端的登出操作
+    commit('setUser', null);
+  },
+  // 其他 actions
+  },
+  getters: {
+  isLoggedIn(state) {
+    return state.user !== null;
+  },
+  // 其他 getters
+  },
+
+
 });
 

@@ -7,7 +7,6 @@ import Tasks from "@/views/TasksPage.vue";
 import Activity from "@/views/ActivityPage.vue";
 
 
-
 const routes = [
     { path: '/', component: Home },
     { path: '/settings', component: Settings },
@@ -15,6 +14,8 @@ const routes = [
     { path: '/tasks', component: Tasks },
     { path: '/activity', component: Activity }, // 这里将ActivityFeed替换为Activity
     { path: '/activity-feed', component: ActivityFeed }, // 这里将ActivityFeed替换为Activity
+    { path: '/register', component: () => import('@/views/RegisterPage.vue') },
+    { path: '/login', component: () => import('@/views/LoginPage.vue') },
 
 ];
 

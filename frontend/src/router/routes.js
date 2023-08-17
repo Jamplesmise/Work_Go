@@ -29,14 +29,53 @@ import SettingsPage from '@/views/SettingsPage.vue';
 import TasksPage from '@/views/TasksPage.vue';
 import UserSettingsPage from '@/views/UserSettingsPage.vue';
 
+
 const routes = [
-  { path: '/', name: 'Home', component: HomePage },
-  { path: '/activity', name: 'Activity', component: ActivityPage },
-  { path: '/dashboard', name: 'Dashboard', component: DashboardPage },
-  { path: '/reports', name: 'Reports', component: ReportsView },
-  { path: '/settings', name: 'Settings', component: SettingsPage },
-  { path: '/tasks', name: 'Tasks', component: TasksPage },
-  { path: '/user-settings', name: 'UserSettings', component: UserSettingsPage },
+   {
+    path: '/',
+    name: 'Home',
+    component: HomePage
+  },
+   {
+    path: '/activity',
+    name: 'Activity',
+    component: ActivityPage
+  },
+   {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: DashboardPage
+  },
+    {
+    path: '/reports',
+    name: 'Reports',
+    component: ReportsView
+  },
+   {
+    path: '/settings',
+    name: 'Settings',
+    component: SettingsPage
+  },
+    {
+    path: '/tasks',
+    name: 'Tasks',
+    component: TasksPage
+  },
+    {
+    path: '/user-settings',
+    name: 'UserSettings',
+    component: UserSettingsPage
+  },
+    {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/RegisterPage.vue')
+  },
+    {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/LoginPage.vue')
+  },
 ];
 
 export default routes;

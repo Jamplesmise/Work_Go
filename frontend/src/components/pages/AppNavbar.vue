@@ -6,6 +6,9 @@
       <li><router-link to="/activity">动态墙</router-link></li>
       <li><router-link to="/settings">设置</router-link></li>
       <li><router-link to="/reports">报告</router-link></li>
+      <li v-if="!isLoggedIn"><router-link to="/register">注册</router-link></li>
+      <li v-if="!isLoggedIn"><router-link to="/login">登录</router-link></li>
+      <li v-if="isLoggedIn" @click="logout"><a href="/">登出</a></li>
     </ul>
   </nav>
 </template>
